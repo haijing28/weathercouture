@@ -1,11 +1,3 @@
-snowing = 0 
-raining = 1
-sunny = 2
-cloudy = 3
-thundering = 4
-fair = 5
-
-anastasis [7:52 PM]
 import pywapi
 from flask import Flask, jsonify, render_template, request
 

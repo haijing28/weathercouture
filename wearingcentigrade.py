@@ -33,7 +33,3 @@ def find_weather(zipcode):
 def get_weather(zipcode):
    result = find_weather(zipcode)
    return ','.join(map(str, result))
-
-if __name__ == '__main__':
-   app.debug = True
-   app.run(host='0.0.0.0', port = 80)

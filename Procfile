@@ -1,1 +1,1 @@
-web: python wearingcentigrade.py
+web: gunicorn wearingcentigrade:app --log-file=-

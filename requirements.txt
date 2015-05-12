@@ -1,2 +1,3 @@
 flask
 pywapi-0.3.8.tar.gz
+gunicorn

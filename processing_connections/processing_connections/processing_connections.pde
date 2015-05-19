@@ -4,6 +4,8 @@
     
     Arduino arduino;
     int ledPin = 13;
+    String zipcode = "11211"; 
+    
     
     void setup()
     {
@@ -14,17 +16,47 @@
     
     void draw()
     {
+      String[] zipline = loadStrings("http://www.pshkvsky.com/weather/upload/relay.txt");
+      zipcode = zipline[0];
       
-      String[]   relayStatus = loadStrings("http://wearingcentigrade.herokuapp.com/10021");
+      String[]   relayStatus = loadStrings("http://wearingcentigrade.herokuapp.com/"+ zipcode);
       String relayString = relayStatus[0];
       String[] list = split(relayString, ',');
       
-      if (list[0].equals("3")){
+      
+      println(zipcode);
+      
+      if (list[0].equals("0")){
+      println("snowing");
+      arduino.digitalWrite(13, Arduino.HIGH);
+    }
+      
+       if (list[0].equals("1")){
+      println("");
+      arduino.digitalWrite(13, Arduino.HIGH);
+    }
+    
+    
+     if (list[0].equals("3")){
       println("good");
       arduino.digitalWrite(13, Arduino.HIGH);
     }
+    
+    
+     if (list[0].equals("3")){
+      println("good");
+      arduino.digitalWrite(13, Arduino.HIGH);
+    }
+    
+     if (list[0].equals("3")){
+      println("good");
+      arduino.digitalWrite(13, Arduino.HIGH);
+    }
+    
       delay(1000);
       }
+      
+
 
 
 
